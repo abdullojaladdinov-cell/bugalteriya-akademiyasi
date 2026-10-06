@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin panel | Bug'alteriya Akademiyasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header admin-header">
+      <div class="container nav-wrap">
+        <a href="/" class="brand" aria-label="Bosh sahifa">
+          <span class="brand-mark">BA</span>
+          <span class="brand-text">Bug'alteriya Akademiyasi</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container admin-main">
+      <section id="adminLoginCard" class="admin-login-card">
+        <span class="section-tag">Admin</span>
+        <h1>Admin panelga kirish</h1>
+        <div class="input-group">
+          <label for="adminPassword">Parol</label>
+          <input id="adminPassword" type="password" placeholder="Parolni kiriting" />
+        </div>
+        <button id="loginBtn" class="btn btn-primary" type="button">Kirish</button>
+        <p id="loginMessage" class="form-status" aria-live="polite"></p>
+      </section>
+
+      <section id="adminDashboard" class="admin-hidden">
+        <div class="stats-row">
+          <div class="mini-stat">
+            <span>Jami ro'yxatdan o'tganlar</span>
+            <strong id="totalStudents">0</strong>
+          </div>
+          <div class="mini-stat">
+            <span>Eng mashhur kurs</span>
+            <strong id="topCourse">-</strong>
+          </div>
+          <div class="mini-stat">
+            <span>Bu oy arizalari</span>
+            <strong id="monthlyCount">0</strong>
+          </div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-head">
+            <div>
+              <span class="section-tag">Admin</span>
+              <h1>Mijozlar boshqaruvi</h1>
+            </div>
+            <span id="adminCount" class="admin-count">0 ta</span>
+          </div>
+
+          <div class="admin-actions-panel">
+            <button id="exportBtn" class="btn btn-secondary" type="button">CSV export</button>
+            <button id="clearBtn" class="btn btn-primary" type="button">Ro'yxatni tozalash</button>
+          </div>
+
+          <div class="customer-table-wrap">
+            <table class="customer-table">
+              <thead>
+                <tr>
+                  <th>Ism</th>
+                  <th>Telefon</th>
+                  <th>Email</th>
+                  <th>Kurs</th>
+                  <th>Sana</th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
